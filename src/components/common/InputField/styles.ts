@@ -1,5 +1,7 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
+import { rem } from '../../../utils';
+
 interface InputFieldStyle {
   container: ViewStyle;
   label: TextStyle;
@@ -7,11 +9,11 @@ interface InputFieldStyle {
 
 export const styles = StyleSheet.create<InputFieldStyle>({
   container: {
-    height: 74,
-    width: 327,
+    height: rem(74),
+    width: rem(327),
   },
   label: {
     color: '#000',
-    fontSize: 20,
+    fontSize: rem(20),
   },
 });

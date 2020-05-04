@@ -1,5 +1,7 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
+import { rem } from '../../../utils';
+
 interface ButtonStyle {
   container: ViewStyle;
   label: TextStyle;
@@ -7,16 +9,16 @@ interface ButtonStyle {
 
 export const styles = StyleSheet.create<ButtonStyle>({
   container: {
-    height: 48,
-    width: 327,
+    height: rem(48),
+    width: rem(327),
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 5,
+    borderRadius: rem(5),
     flexDirection: 'row',
   },
   label: {
     color: '#FFF',
-    fontSize: 18,
-    paddingHorizontal: 3,
+    fontSize: rem(18),
+    paddingHorizontal: rem(3),
   },
 });
