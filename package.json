@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "config-android": "adb tcpip 1488 && adb reverse tcp:8081 tcp:8081",
+    "connect": "adb connect 192.168.0.228:1488",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
