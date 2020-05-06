@@ -18,7 +18,7 @@ export const styles = StyleSheet.create<SignInScreenStyles>({
     paddingHorizontal: rem(24),
   },
   sigInForm: { marginBottom: 90 },
-  header: { marginVertical: 90 },
+  header: { marginVertical: 50 },
   emailField: { marginBottom: 20 },
   passField: {},
   loginButton: {},
