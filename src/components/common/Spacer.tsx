@@ -17,4 +17,4 @@ const Spacer = (props: SpacerProps) => {
   );
 };
 
-export default Spacer;
+export default React.memo(Spacer);

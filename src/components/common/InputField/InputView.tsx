@@ -24,4 +24,4 @@ const InputFieldView = (props: InputFieldProps) => {
   );
 };
 
-export default InputFieldView;
+export default React.memo(InputFieldView);

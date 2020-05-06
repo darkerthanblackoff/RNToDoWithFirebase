@@ -86,4 +86,4 @@ const SignUpScreenView = (props: SignUpScreenViewProps) => {
   );
 };
 
-export default SignUpScreenView;
+export default React.memo(SignUpScreenView);

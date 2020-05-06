@@ -19,4 +19,4 @@ const HeaderView = (props: HeaderProps) => {
   );
 };
 
-export default HeaderView;
+export default React.memo(HeaderView);

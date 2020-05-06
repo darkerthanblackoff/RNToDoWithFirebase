@@ -48,4 +48,4 @@ const ButtonView = (props: ButtonProps) => {
   }
 };
 
-export default ButtonView;
+export default React.memo(ButtonView);

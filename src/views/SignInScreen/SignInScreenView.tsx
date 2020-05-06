@@ -48,4 +48,4 @@ const SignInScreenView = (props: SignInScreenViewProps) => {
   );
 };
 
-export default SignInScreenView;
+export default React.memo(SignInScreenView);
