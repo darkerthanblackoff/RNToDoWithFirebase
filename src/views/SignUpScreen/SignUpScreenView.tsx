@@ -80,8 +80,8 @@ const SignUpScreenView = (props: SignUpScreenViewProps) => {
           onChangeText={setConfirmPass}
         />
         <Spacer />
-        <Button label="Sign Up" onPress={onPressSignUp} />
       </ScrollView>
+      <Button label="Sign Up" onPress={onPressSignUp} />
     </View>
   );
 };
