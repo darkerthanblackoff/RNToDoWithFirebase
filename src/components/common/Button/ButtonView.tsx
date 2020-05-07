@@ -6,6 +6,7 @@ import {
   Text,
   View,
   ViewStyle,
+  TextStyle,
 } from 'react-native';
 
 import { styles } from './styles';
@@ -14,6 +15,7 @@ interface ButtonProps {
   label?: string;
   color?: string;
   style?: ViewStyle;
+  labelStyle?: TextStyle;
   onPress?: () => void;
 }
 
@@ -23,6 +25,7 @@ const ButtonView = (props: ButtonProps) => {
     color = '#F96060',
     onPress = () => {},
     style,
+    labelStyle,
   } = props;
 
   switch (Platform.OS) {
@@ -33,7 +36,7 @@ const ButtonView = (props: ButtonProps) => {
           background={TouchableNativeFeedback.Ripple('#000', false)}
         >
           <View style={[styles.container, { backgroundColor: color }, style]}>
-            <Text style={styles.label}>{label}</Text>
+            <Text style={[styles.label, labelStyle]}>{label}</Text>
           </View>
         </TouchableNativeFeedback>
       );
@@ -41,7 +44,7 @@ const ButtonView = (props: ButtonProps) => {
       return (
         <TouchableOpacity onPress={onPress}>
           <View style={[styles.container, { backgroundColor: color }]}>
-            <Text style={styles.label}>{label}</Text>
+            <Text style={[styles.label, labelStyle]}>{label}</Text>
           </View>
         </TouchableOpacity>
       );
