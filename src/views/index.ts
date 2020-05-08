@@ -3,6 +3,7 @@ import SignUpScreen from './SignUpScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import ResetPasswordScreen from './ResetPasswordScreen';
 import OnboardingScreen from './OnboardingScreen';
+import * as MainFlowScreens from './MainFlow';
 
 export {
   SignInScreen,
@@ -10,4 +11,5 @@ export {
   ForgotPasswordScreen,
   ResetPasswordScreen,
   OnboardingScreen,
+  MainFlowScreens,
 };
