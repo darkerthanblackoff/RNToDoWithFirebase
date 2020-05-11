@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Header, InputField, Button } from '../../components';
 import { styles } from './styles';
@@ -13,37 +14,38 @@ interface SignInScreenViewProps {
 }
 
 const SignInScreenView = (props: SignInScreenViewProps) => {
+  const { t } = useTranslation();
   const { email, password, setEmail, setPassword, resetPass } = props;
 
   return (
     <View style={styles.container}>
       <Header
         style={styles.header}
-        title="Welcome"
-        subTitle="Sign in to continue"
+        title={t('sign_in.title')}
+        subTitle={t('sign_in.sub_title')}
       />
       <View style={styles.sigInForm}>
         <InputField
           style={styles.emailField}
-          label="E-mail"
+          label={t('sign_in.input_fields.email.label')}
           textContentType="emailAddress"
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail}
-          placeholder="Enter your email"
+          placeholder={t('sign_in.input_fields.email.placeholder')}
         />
         <InputField
-          label="Password"
+          label={t('sign_in.input_fields.password.label')}
           value={password}
           onChangeText={setPassword}
-          placeholder="Enter your password"
+          placeholder={t('sign_in.input_fields.password.placeholder')}
           secureTextEntry
         />
         <Text onPress={resetPass} style={styles.text}>
-          Forgot password
+          {t('sign_in.buttons.forgot_pass')}
         </Text>
       </View>
-      <Button label="Log In" />
+      <Button label={t('sign_in.buttons.log_in')} />
     </View>
   );
 };
