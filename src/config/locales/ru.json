@@ -1,0 +1,22 @@
+{
+  "screens": {
+    "sign_in": {
+      "title": "Добро пожаловать",
+      "sub_title": "Войдите, чтобы продолжить",
+      "input_fields": {
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Введите свой email"
+        },
+        "password": {
+          "label": "Пароль",
+          "placeholder": "Введите свой пароль"
+        }
+      },
+      "buttons": {
+        "forgot_pass": "Забыл пароль",
+        "log_in": "Войти"
+      }
+    }
+  }
+}

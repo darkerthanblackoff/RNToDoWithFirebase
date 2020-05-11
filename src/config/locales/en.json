@@ -1,0 +1,27 @@
+{
+  "screens": {
+    "sign_in": {
+      "title": "Welcome",
+      "sub_title": "Sign in to continue",
+      "input_fields": {
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Enter your email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password"
+        }
+      },
+      "buttons": {
+        "forgot_pass": "Forgot password",
+        "log_in": "Log In"
+      }
+    }
+  },
+  "test": "test",
+  "t1": "test1",
+  "t2": {
+    "te": "test"
+  }
+}
