@@ -1,6 +1,9 @@
 import React, { Suspense } from 'react';
 import { View, Text, StatusBar } from 'react-native';
 
+import { I18nextProvider } from 'react-i18next';
+import i18n from './config/i18next';
+
 import Router from './router';
 
 const App = () => {
@@ -14,7 +17,9 @@ const App = () => {
         }
       >
         <StatusBar barStyle="dark-content" backgroundColor="#FFF" />
-        <Router />
+        <I18nextProvider i18n={i18n}>
+          <Router />
+        </I18nextProvider>
       </Suspense>
     </>
   );
