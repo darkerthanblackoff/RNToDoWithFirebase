@@ -4,11 +4,12 @@ import { getLanguages } from 'react-native-i18n';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import { logi } from '../utils';
+import { STORAGE_KEYS } from '../constants';
 
 import ru from './locales/ru.json';
 import en from './locales/en.json';
 
-const LOCALE_STORAGE_KEY = '@APP:languageCode';
+const LOCALE_STORAGE_KEY = STORAGE_KEYS.LOCALE;
 
 export function findUserLang() {
   getLanguages().then((languages) => {
@@ -36,10 +37,11 @@ i18next
   .use(languageDetector)
   .use(initReactI18next)
   .init({
+    ns: 'screens',
     defaultNS: 'screens',
     fallbackLng: 'en',
     resources: { ru, en },
-    debug: true,
+    debug: false,
     interpolation: {
       escapeValue: false,
     },
