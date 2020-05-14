@@ -11,11 +11,19 @@ interface SignInScreenViewProps {
   setEmail: (email: string) => void;
   setPassword: (pwd: string) => void;
   resetPass: () => void;
+  onLogInPress: () => void;
 }
 
 const SignInScreenView = (props: SignInScreenViewProps) => {
   const { t } = useTranslation();
-  const { email, password, setEmail, setPassword, resetPass } = props;
+  const {
+    email,
+    password,
+    setEmail,
+    setPassword,
+    resetPass,
+    onLogInPress,
+  } = props;
 
   return (
     <View style={styles.container}>
@@ -45,7 +53,7 @@ const SignInScreenView = (props: SignInScreenViewProps) => {
           {t('sign_in.buttons.forgot_pass')}
         </Text>
       </View>
-      <Button label={t('sign_in.buttons.log_in')} />
+      <Button label={t('sign_in.buttons.log_in')} onPress={onLogInPress} />
     </View>
   );
 };
