@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import Firebase from '../config/firebase';
 import * as VIEWS from '../views';
 import { ROUTES } from '../constants';
 import { BottomTabBar } from '../components';
@@ -81,7 +82,11 @@ const Router = () => {
         console.error(err);
       });
   }, [isFirstLaunch]);
-  useEffect(() => {}, [isAuthentificated]);
+  useEffect(() => {
+    Firebase.auth().onAuthStateChanged((user) => {
+      setAuthentificated(!!user);
+    });
+  }, []);
 
   return (
     <NavigationContainer>
