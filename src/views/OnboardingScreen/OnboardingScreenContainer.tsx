@@ -1,8 +1,11 @@
 import React, { useState, useCallback, useRef } from 'react';
 
 import Carousel from 'react-native-snap-carousel';
+import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import OnboardingScreenView from './OnboardingScreenView';
+import { ROUTES, STORAGE_KEYS } from '../../constants';
 
 const data = [
   {
@@ -25,6 +28,7 @@ const data = [
 const OnboardingScreenContainer = () => {
   const [page, setPage] = useState<number>(0);
   const carouselRef = useRef<Carousel>(null);
+  const navigation = useNavigation();
   const getFooterColor = useCallback(() => {
     switch (page) {
       case 1:
@@ -38,6 +42,10 @@ const OnboardingScreenContainer = () => {
   const onNextPress = useCallback(() => {
     carouselRef.current.snapToNext();
   }, [carouselRef]);
+  const onGetStartedPress = useCallback(() => {
+    AsyncStorage.setItem(STORAGE_KEYS.FIRST_LAUNCH, 'false');
+    navigation.navigate(ROUTES.AUTH_FLOW.AUTH_SCREEN);
+  }, [navigation]);
 
   return (
     <OnboardingScreenView
@@ -47,7 +55,7 @@ const OnboardingScreenContainer = () => {
       nextBtnLabel={page === data.length - 1 ? 'Get Started' : 'Next'}
       setPage={setPage}
       getFooterColor={getFooterColor}
-      onNextPress={onNextPress}
+      onNextPress={page === data.length - 1 ? onGetStartedPress : onNextPress}
     />
   );
 };
