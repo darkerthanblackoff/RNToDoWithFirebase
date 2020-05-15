@@ -17,11 +17,35 @@
         "forgot_pass": "Forgot password",
         "log_in": "Log In"
       }
+    },
+    "sign_up": {
+      "title": "Welcome",
+      "sub_title": "Sign Up to continue",
+      "input_fields": {
+        "firstname": {
+          "label": "Firstname",
+          "placeholder": "Enter your firstname"
+        },
+        "lastname": {
+          "label": "Lastname",
+          "placeholder": "Enter your lastname"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Enter your email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter new password"
+        },
+        "confirm_pass": {
+          "label": "Confirm password",
+          "placeholder": "Re-enter your password"
+        }
+      },
+      "buttons": {
+        "sign_up": "Sign Up"
+      }
     }
-  },
-  "test": "test",
-  "t1": "test1",
-  "t2": {
-    "te": "test"
   }
 }

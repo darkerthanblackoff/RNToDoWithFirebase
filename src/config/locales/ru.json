@@ -17,6 +17,35 @@
         "forgot_pass": "Забыл пароль",
         "log_in": "Войти"
       }
+    },
+    "sign_up": {
+      "title": "Добро пожаловать",
+      "sub_title": "Зарегистрируйтесь, чтобы продолжить",
+      "input_fields": {
+        "firstname": {
+          "label": "Имя",
+          "placeholder": "Введите своё имя"
+        },
+        "lastname": {
+          "label": "Фамилия",
+          "placeholder": "Введите свою фамилию"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "Введите свой email"
+        },
+        "password": {
+          "label": "Пароль",
+          "placeholder": "Введите новый пароль"
+        },
+        "confirm_pass": {
+          "label": "Подтвердить пароль",
+          "placeholder": "Повторите новый пароль"
+        }
+      },
+      "buttons": {
+        "sign_up": "Зарегистрироваться"
+      }
     }
   }
 }
