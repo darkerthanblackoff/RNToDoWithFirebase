@@ -1,5 +1,23 @@
 {
   "screens": {
+    "onboarding": {
+      "1": {
+        "title": "Welcome to aking",
+        "sub_title": "Whats going to happen tomorrow?"
+      },
+      "2": {
+        "title": "Work happens",
+        "sub_title": "Get notified when work happens."
+      },
+      "3": {
+        "title": "Tasks and assign",
+        "sub_title": "Task and assign them to colleagues."
+      },
+      "buttons": {
+        "next": "Next",
+        "start": "Get Started"
+      }
+    },
     "sign_in": {
       "title": "Welcome",
       "sub_title": "Sign in to continue",

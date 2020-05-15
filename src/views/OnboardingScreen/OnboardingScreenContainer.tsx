@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
 
+import { useTranslation } from 'react-i18next';
+import { TFunction } from 'i18next';
 import Carousel from 'react-native-snap-carousel';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -7,26 +9,28 @@ import AsyncStorage from '@react-native-community/async-storage';
 import OnboardingScreenView from './OnboardingScreenView';
 import { ROUTES, STORAGE_KEYS } from '../../constants';
 
-const data = [
+const getData = (t: TFunction) => [
   {
-    title: 'Welcome to aking',
-    subTitle: 'Whats going to happen tomorrow?',
+    title: t('onboarding.1.title'),
+    subTitle: t('onboarding.1.sub_title'),
     image: require('../../assets/png/undraw_events_2p66.png'),
   },
   {
-    title: 'Work happens',
-    subTitle: 'Get notified when work happens.',
+    title: t('onboarding.2.title'),
+    subTitle: t('onboarding.2.sub_title'),
     image: require('../../assets/png/undraw_superhero_kguv.png'),
   },
   {
-    title: 'Tasks and assign',
-    subTitle: 'Task and assign them to colleagues.',
+    title: t('onboarding.3.title'),
+    subTitle: t('onboarding.3.sub_title'),
     image: require('../../assets/png/undraw_analysis_4jis.png'),
   },
 ];
 
 const OnboardingScreenContainer = () => {
+  const { t } = useTranslation();
   const [page, setPage] = useState<number>(0);
+  const data = getData(t);
   const carouselRef = useRef<Carousel>(null);
   const navigation = useNavigation();
   const getFooterColor = useCallback(() => {
@@ -52,7 +56,11 @@ const OnboardingScreenContainer = () => {
       page={page}
       data={data}
       carouselRef={carouselRef}
-      nextBtnLabel={page === data.length - 1 ? 'Get Started' : 'Next'}
+      nextBtnLabel={
+        page === data.length - 1
+          ? t('onboarding.buttons.start')
+          : t('onboarding.buttons.next')
+      }
       setPage={setPage}
       getFooterColor={getFooterColor}
       onNextPress={page === data.length - 1 ? onGetStartedPress : onNextPress}
